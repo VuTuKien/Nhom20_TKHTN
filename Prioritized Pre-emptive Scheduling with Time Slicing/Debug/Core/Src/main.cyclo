@@ -1,0 +1,16 @@
+../Core/Src/main.c:104:6:microDelay	2
+../Core/Src/main.c:109:6:DisplayDigit	6
+../Core/Src/main.c:131:7:DisplayNumber	1
+../Core/Src/main.c:151:5:main	1
+../Core/Src/main.c:244:6:SystemClock_Config	3
+../Core/Src/main.c:284:13:MX_TIM1_Init	4
+../Core/Src/main.c:330:13:MX_USART1_UART_Init	2
+../Core/Src/main.c:363:13:MX_GPIO_Init	1
+../Core/Src/main.c:418:10:DHT22_Start	5
+../Core/Src/main.c:415:6:RunTask1	4
+../Core/Src/main.c:449:10:DHT22_Read	7
+../Core/Src/main.c:514:6:RunTask2	1
+../Core/Src/main.c:542:6:RunTask3	2
+../Core/Src/main.c:565:6:RunTask4	1
+../Core/Src/main.c:586:6:RunTask5	2
+../Core/Src/main.c:607:6:Error_Handler	1
