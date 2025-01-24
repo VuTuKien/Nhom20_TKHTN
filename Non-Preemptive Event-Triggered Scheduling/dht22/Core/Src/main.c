@@ -262,8 +262,6 @@ int main(void)
 		HAL_Delay(1000);
 		GPIO_TypeDef* digitPorts[3] = {GPIOB, GPIOB, GPIOB}; // Gi? s? dùng port A
     uint16_t digitPins[3] = {GPIO_PIN_1, GPIO_PIN_10, GPIO_PIN_11};
-		 if (send_temp)
-    {
         // Gui nhiet do qua UART
       sprintf(uart_buffer, "Temperature: %.1fC\r\n", tCelsius); // Gui nhiet do
 			HAL_UART_Transmit(&huart1, (uint8_t*)uart_buffer, strlen(uart_buffer), HAL_MAX_DELAY);
@@ -271,9 +269,8 @@ int main(void)
         DisplayNumber(T);
     }HAL_GPIO_WritePin(GPIOB, digitPins[0] | digitPins[1] | digitPins[2], GPIO_PIN_RESET);
      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
-		}
-    else
-    {
+		HAL_Delay(1000);
+		
         // Gui do am qua UART
       sprintf(uart_buffer, "Humidity: %.0f%%\r\n", RH); // Gui do am
 			HAL_UART_Transmit(&huart1, (uint8_t*)uart_buffer, strlen(uart_buffer), HAL_MAX_DELAY);
@@ -282,10 +279,8 @@ int main(void)
         }
     HAL_GPIO_WritePin(GPIOB, digitPins[0] | digitPins[1] | digitPins[2], GPIO_PIN_RESET);
      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
-    }
-
-    send_temp = !send_temp; // Thay doi gui giua nhiet do va do am
-    HAL_Delay(1000); // thoi gian cho 5s
+    
+    HAL_Delay(1000); // thoi gian cho 1s
 	}
     
     
